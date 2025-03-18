@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPG 點擊移動角色</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      /* 遊戲區域 */
+      .game-container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        border: 3px solid black;
+        padding: 0;
+        margin: 0;
+        gap: 0; /* 🔹 移除格子間隙 */
+      }
+
+      /* 每個格子 */
+      .tile {
+        width: 100%;
+        height: 100%;
+        background-color: #ddd;
+        border: 1px solid #bbb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* 角色 */
+      .character {
+        position: absolute;
+        width: 80px; /* 與 tile 相同 */
+        height: 80px; /* 與 tile 相同 */
+        background-color: red;
+        border-radius: 50%;
+        transition: 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <!-- 自動生成 5x5 格子 -->
+    </div>
+
+    <body>
+<script>
+  $(document).ready(function () {
+    let gameContainer = $(".game-container");
+    let gridSize = 5; // 5x5 格子
+    let containerSize = 100; // 百分比模式（0% ~ 100%）
+
+    // 產生 5x5 的格子
+    for (let i = 0; i < gridSize * gridSize; i++) {
+        gameContainer.append('<div class="tile" data-index="' + i + '"></div>');
+    }
+
+    // 添加角色
+    let character = $('<div class="character"></div>');
+    gameContainer.append(character);
+
+    let charPos = { x: 0, y: 0 }; // 角色當前的格子位置
+    let moving = false;
+
+    function moveCharacter(targetX, targetY) {
+        if (moving) return;
+        moving = true;
+
+        let currentX = charPos.x;
+        let currentY = charPos.y;
+        let stepsX = [];
+        let stepsY = [];
+
+        // **計算 X 軸步驟**
+        while (currentX !== targetX) {
+            currentX += currentX < targetX ? 1 : -1;
+            stepsX.push({ x: currentX, y: charPos.y });
+        }
+
+        // **計算 Y 軸步驟**
+        while (currentY !== targetY) {
+            currentY += currentY < targetY ? 1 : -1;
+            stepsY.push({ x: targetX, y: currentY });
+        }
+
+        // **移動角色**
+        function stepMove(steps, nextStep) {
+            if (steps.length === 0) {
+                nextStep();
+                return;
+            }
+
+            let step = steps.shift();
+            let newX = (step.x / (gridSize - 1)) * containerSize; // ✅ 計算百分比
+            let newY = (step.y / (gridSize - 1)) * containerSize; // ✅ 計算百分比
+
+            character.animate(
+                {
+                    left: newX + "%",
+                    top: newY + "%",
+                },
+                200,
+                function () {
+                    stepMove(steps, nextStep);
+                }
+            );
+
+            charPos.x = step.x;
+            charPos.y = step.y;
+        }
+
+        // **先移動 X 軸，延遲 300ms 再移動 Y 軸**
+        stepMove(stepsX, function () {
+            setTimeout(function () {
+                stepMove(stepsY, function () {
+                    // **最後手動對齊到格子**
+                    let finalX = (targetX / (gridSize - 1)) * containerSize;
+                    let finalY = (targetY / (gridSize - 1)) * containerSize;
+                    character.css({ left: finalX + "%", top: finalY + "%" });
+
+                    moving = false;
+                });
+            }, 300);
+        });
+    }
+
+    // **監聽格子點擊事件**
+    $(".tile").on("click", function () {
+        let index = $(this).data("index");
+        let targetX = index % gridSize;
+        let targetY = Math.floor(index / gridSize);
+        moveCharacter(targetX, targetY);
+    });
+
+    // **初始化角色位置**
+    function setInitialPosition() {
+        let startX = (charPos.x / (gridSize - 1)) * containerSize;
+        let startY = (charPos.y / (gridSize - 1)) * containerSize;
+        character.css({ left: startX + "%", top: startY + "%" });
+    }
+
+    setInitialPosition();
+});
+
+
+</script>
+  </body>
+</html>
