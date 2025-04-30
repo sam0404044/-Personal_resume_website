@@ -1,281 +1,310 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RPG 點擊移動角色</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-      /* 遊戲區域 */
-      .game-container {
-        position: relative;
-        width: 400px;
-        height: 400px;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-        border: 3px solid black;
-        padding: 0;
-        margin: 0;
-        gap: 0; /* 🔹 移除格子間隙 */
-      }
-
-      /* 每個格子 */
-      .tile {
-        width: 100%;
-        height: 100%;
-        background-color: #ddd;
-        border: 1px solid #bbb;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        padding: 0;
-        margin: 0;
-      }
-
-      /* 角色 */
-      .character {
-        position: absolute;
-        width: 80px; /* 與 tile 相同 */
-        height: 80px; /* 與 tile 相同 */
-        background-color: red;
-        border-radius: 50%;
-        transition: 0.3s ease-in-out;
-      }
-    </style>
+    <title>陳冠宏 履歷</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="game-container">
-      <!-- 自動生成 5x5 格子 -->
-    </div>
+    <!-- <div class="a4-auto" id="a4paper"> -->
+    <!-- 區塊 1：個人資料區塊 -->
+    <section class="section1">
+      <div class="section1-container">
+        <div class="headphoto-wrapper">
+          <img src="./img/headphoto.png" class="headphoto" />
+        </div>
+        <div class="s1text">
+          <div class="s1name">陳冠宏</div>
+          <div class="s1enname">chen kuan hung</div>
+          <div class="s1worktitle">（前端/全端工程師）</div>
+        </div>
+        <div class="social_media">
+          <span>📧sam0404044@gmail.com</span>
+          <span>📞 0922850404</span>
+          <a href="#"><img src="./img/facebook_white.svg" alt="Facebook" /></a>
+          <a href="#"><img src="./img/medium_white.svg" alt="Medium" /></a>
+          <a href="#"><img src="./img/github_inverted.png" alt="GITHUB" /></a>
+        </div>
+      </div>
+    </section>
 
-    <body>
-      
-      .resume
-      .top
-        h1.name Name
-        span.smallText 自我介紹
-        .avatar
-        .buttons
-          a(href="https://hahow.in/" target="_blank").btnfill
-          a(href="https://hahow.in/" target="_blank").btn
-          
-      .middle
-        .left
-          .block
-            h4 Skills
-            h2 專業技能
-            ul.listSkills
-              li 技能名稱01
-                .circle 
-                  .p90
-                  .p180
-                  .p270
-                  .p360
-              li 技能名稱02
-                .circle 
-                  .p90
-              li 技能名稱03
-                .circle
-                  .p90
-                  .p180
-                  .p270
-              li 技能名稱04
-                .circle 
-                  .p90
-                  .p180
-              li 技能名稱05
-                .circle 
-                  .p90
-                  .p180
-              li 技能名稱06
-                .circle 
-                  .p90
-                  .p180
-                  .p270
-                  .p360
-              li 技能名稱07
-                .circle 
-                  .p90
-                  .p180
-                  .p270
-              li 技能名稱08
-                .circle 
-                  .p90
-                  .p180
-          .block
-            h4 Programming Skills
-            h2 程式技能
-            ul.listProgram
-              li 程式技能01
-                .bar
-                  .value         
-              li 程式技能02
-                .bar
-                  .value.p10
-              li 程式技能03
-                .bar 
-                  .value.p80
-              li 程式技能04
-                .bar 
-                  .value
-              li 程式技能05
-                .bar 
-                  .value.p100
-              li 程式技能06
-                .bar
-                  .value
-              li 程式技能07
-                .bar
-                  .value
-        .right
-          .block
-            h4 Experience / Works
-            h2 經歷與作品
-            ul.listExperience
-              li.year 2017          
-                ul
-                  li 經歷說明經歷說明01
-                  li 經歷說明經歷說明經歷說明02
-              li.year 2018          
-                ul
-                  li 經歷說明經歷說明01
-                  li 經歷說明經歷說明經歷說明02
-              li.year 2019          
-                ul
-                  li 經歷說明經歷說明01
-                  li 經歷說明經歷說明經歷說明02
-              li.year 2020          
-                ul
-                  li 經歷說明經歷說明01
-                  li 經歷說明經歷說明經歷說明02
-              li.year 2021          
-                ul
-                  li 經歷說明經歷說明01
-                  li 經歷說明經歷說明經歷說明02
-              li.year 2022
-                ul
-                  li 經歷說明經歷說明01
-                  li 經歷說明經歷說明經歷說明02
-              li.year 2023
-                ul
-                  li 經歷說明經歷說明01
-                  li 經歷說明經歷說明經歷說明02
-          .block
-            h4 Personality
-            h2 個人特質
-            ul.listPersonality
-              li.traits 特質01
-              li.traits 特質02
-              li.traits 特質03
-              li.traits 特質04
-              li.traits 特質05
-      .bottom
-        h6 2023
-    
+    <!-- 區塊 2：技能進度圈 -->
 
+    <section class="section2">
+      <div class="section2-left">
+        <div class="section-title-wrap">
+          <div class="section-sub">Aboutme</div>
+          <div class="section-title">自我介紹</div>
+          <div class="textStyle">
+            我擁有資策會紮實的半年程式設計基礎，獨立接案網頁設計金額已超過35萬元，具備豐富的專案經驗與獨立作業能力。轉職工程師前，更曾擔任總企劃，主導過兩個百萬級專案，展現出卓越的組織、工作溝通與協調能力。<br /><br />我相信，熱情能將程式碼淬鍊為藝術與美感。
+          </div>
+        </div>
+        <div class="section-title-wrap">
+          <div class="section-sub">SKILL</div>
+          <div class="section-title">專業技能</div>
+        </div>
+        <div class="s2-my-skill">
+          <div class="skill-card">
+            <div class="progress-ring" style="--progress: 95">
+              <svg class="progress-circle" width="100" height="100">
+                <circle
+                  class="progress-background"
+                  cx="50"
+                  cy="50"
+                  r="40"
+                ></circle>
+                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+              </svg>
+              <span class="progress-text">95%</span>
+            </div>
+            <div>HTML、CSS</div>
+          </div>
+          <div class="skill-card">
+            <div class="progress-ring" style="--progress: 85">
+              <svg class="progress-circle" width="100" height="100">
+                <circle
+                  class="progress-background"
+                  cx="50"
+                  cy="50"
+                  r="40"
+                ></circle>
+                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+              </svg>
+              <span class="progress-text">85%</span>
+            </div>
+            <div>JavaScript</div>
+          </div>
+          <div class="skill-card">
+            <div class="progress-ring" style="--progress: 75">
+              <svg class="progress-circle" width="100" height="100">
+                <circle
+                  class="progress-background"
+                  cx="50"
+                  cy="50"
+                  r="40"
+                ></circle>
+                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+              </svg>
+              <span class="progress-text">75%</span>
+            </div>
+            <div>MySQL</div>
+          </div>
+          <div class="skill-card">
+            <div class="progress-ring" style="--progress: 60">
+              <svg class="progress-circle" width="100" height="100">
+                <circle
+                  class="progress-background"
+                  cx="50"
+                  cy="50"
+                  r="40"
+                ></circle>
+                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+              </svg>
+              <span class="progress-text">60%</span>
+            </div>
+            <div>PHP</div>
+          </div>
+          <div class="skill-card">
+            <div class="progress-ring" style="--progress: 85">
+              <svg class="progress-circle" width="100" height="100">
+                <circle
+                  class="progress-background"
+                  cx="50"
+                  cy="50"
+                  r="40"
+                ></circle>
+                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+              </svg>
+              <span class="progress-text">85%</span>
+            </div>
+            <div>jQuery</div>
+          </div>
+          <div class="skill-card">
+            <div class="progress-ring"  style="--progress: 75">
+              <svg class="progress-circle" width="100" height="100">
+                <circle
+                  class="progress-background"
+                  cx="50"
+                  cy="50"
+                  r="40"
+                ></circle>
+                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+              </svg>
+              <span class="progress-text">75%</span>
+            </div>
+            <div>Node.js</div>
+          </div>
+          <div class="skill-card">
+            <div class="progress-ring"  style="--progress: 70">
+              <svg class="progress-circle" width="100" height="100">
+                <circle
+                  class="progress-background"
+                  cx="50"
+                  cy="50"
+                  r="40"
+                ></circle>
+                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+              </svg>
+              <span class="progress-text">70%</span>
+            </div>
+            <div>React</div>
+          </div>
+          <div class="skill-card">
+            <div class="progress-ring"  style="--progress: 60">
+              <svg class="progress-circle" width="100" height="100">
+                <circle
+                  class="progress-background"
+                  cx="50"
+                  cy="50"
+                  r="40"
+                ></circle>
+                <circle class="progress-fill" cx="50" cy="50" r="40"></circle>
+              </svg>
+              <span class="progress-text">75%</span>
+            </div>
+           Vue
+          </div>
+        </div>
+        <div class="section-title-wrap">
+          <div class="section-sub">Other Skills</div>
+          <div class="section-title">其他技能</div>
+          <div class="other-skills-container">
+            <ul class="other-skills-list">
+              <li class="skill-item">
+                <div class="skill-title">
+                  日文 (JLPT N3) / Japanese (JLPT N3)
+                </div>
+                <div class="skill-description">
+                  通過日本語能力試驗 N3 級別，具備基礎的日語聽、說、讀、寫能力。
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-title">
+                  專案管理工具 (Trello, Slack) / Project Management Tools
+                  (Trello, Slack)
+                </div>
+                <div class="skill-description">
+                  熟悉使用 Trello 進行專案管理和任務追蹤，以及使用 Slack
+                  進行團隊溝通和協作。
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-title">
+                  聊天機器人開發 / Chatbot Development
+                </div>
+                <div class="skill-description">
+                  具備開發聊天機器人的經驗或知識。
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-title">網路行銷 / Digital Marketing</div>
+                <div class="skill-description">
+                  熟悉網路行銷相關概念和操作。
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-title">
+                  作家 (合著三本文學相關書籍) / Author (Co-authored 3 Literary
+                  Works)
+                </div>
+                <div class="skill-description">
+                  與他人合著出版三本文學相關書籍。
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-title">活動主持 / Event Hosting</div>
+                <div class="skill-description">具備主持活動的經驗和能力。</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
+      <hr class="middleline" />
+      <div class="section2-right">
+        <div class="project-experience">
+          <div class="section-title-wrap">
+            <div class="section-sub">Project Experience</div>
+            <div class="section-title">專案經驗</div>
+            <div class="project-year">2022</div>
+          <div class="project-item">
+            <h3 class="project-title">雲端漫遊☁️ 獨立書店聯合線上展</h3>
+            <div class="project-role">總策展人</div>
+            <p class="project-description">
+              獨立撰寫專案企劃並成功獲得投標機會。籌組並領導專案團隊，主導串聯
+              25 間獨立書店與 40 位藝文出版界講師，創新導入 GatherTown
+              平台設計獨特的互動式線上展覽體驗。負責超過百萬元的專案經費規劃、管理與執行，成功提升線上展的參與度和話題性。
+            </p>
+          </div>
+          <div class="project-year">2023 ~ 2024</div>
+          <div class="project-item">
+            <h3 class="project-title">以思科技</h3>
+            <div class="project-role">網頁設計專案經理 (PM)</div>
+            <div class="sub-project">
+              <h4 class="sub-project-title">台灣印度交流網</h4>
+              <p class="project-description">
+                擔任專案經理，負責專案的整體規劃、需求分析、進度追蹤、設計與開發團隊協調、以及與客戶的密切溝通，確保專案按時程和預算順利完成並交付高品質的網站。
+              </p>
+            </div>
+            <div class="sub-project">
+              <h4 class="sub-project-title">體運人才資訊系統</h4>
+              <p class="project-description">
+                擔任專案經理，主導體運人才資訊系統的從無到有的設計與開發。負責深入的需求分析、系統架構規劃、設計團隊與開發團隊的管理，並與相關政府單位進行有效的協調溝通，最終成功上線此資訊系統，提升體運人才資訊管理的效率。
+              </p>
+            </div>
+          </div>
 
-<script>
-  $(document).ready(function () {
-    let gameContainer = $(".game-container");
-    let gridSize = 5; // 5x5 格子
-    let containerSize = 100; // 百分比模式（0% ~ 100%）
+          <div class="project-year">2024</div>
+          <div class="project-item">
+            <h3 class="project-title">南島嶼族文學市集</h3>
+            <div class="project-role">總策展人</div>
+            <p class="project-description">
+              從零開始獨立構思、撰寫並成功提案此推廣南島語族文學的綜合性活動。全面負責專案團隊的籌組、招募與領導，主導為期兩天的實體市集的攤位招募、活動流程設計，以及線上講座與線上課程的內容規劃。負責與合作夥伴、講師、參展單位等進行有效的溝通與協調，並負責超過百萬元的專案經費規劃、分配與執行，成功提升公眾對南島語族文學的關注。
+            </p>
+          </div>
 
-    // 產生 5x5 的格子
-    for (let i = 0; i < gridSize * gridSize; i++) {
-        gameContainer.append('<div class="tile" data-index="' + i + '"></div>');
-    }
-
-    // 添加角色
-    let character = $('<div class="character"></div>');
-    gameContainer.append(character);
-
-    let charPos = { x: 0, y: 0 }; // 角色當前的格子位置
-    let moving = false;
-
-    function moveCharacter(targetX, targetY) {
-        if (moving) return;
-        moving = true;
-
-        let currentX = charPos.x;
-        let currentY = charPos.y;
-        let stepsX = [];
-        let stepsY = [];
-
-        // **計算 X 軸步驟**
-        while (currentX !== targetX) {
-            currentX += currentX < targetX ? 1 : -1;
-            stepsX.push({ x: currentX, y: charPos.y });
-        }
-
-        // **計算 Y 軸步驟**
-        while (currentY !== targetY) {
-            currentY += currentY < targetY ? 1 : -1;
-            stepsY.push({ x: targetX, y: currentY });
-        }
-
-        // **移動角色**
-        function stepMove(steps, nextStep) {
-            if (steps.length === 0) {
-                nextStep();
-                return;
-            }
-
-            let step = steps.shift();
-            let newX = (step.x / (gridSize - 1)) * containerSize; // ✅ 計算百分比
-            let newY = (step.y / (gridSize - 1)) * containerSize; // ✅ 計算百分比
-
-            character.animate(
-                {
-                    left: newX + "%",
-                    top: newY + "%",
-                },
-                200,
-                function () {
-                    stepMove(steps, nextStep);
-                }
-            );
-
-            charPos.x = step.x;
-            charPos.y = step.y;
-        }
-
-        // **先移動 X 軸，延遲 300ms 再移動 Y 軸**
-        stepMove(stepsX, function () {
-            setTimeout(function () {
-                stepMove(stepsY, function () {
-                    // **最後手動對齊到格子**
-                    let finalX = (targetX / (gridSize - 1)) * containerSize;
-                    let finalY = (targetY / (gridSize - 1)) * containerSize;
-                    character.css({ left: finalX + "%", top: finalY + "%" });
-
-                    moving = false;
-                });
-            }, 300);
-        });
-    }
-
-    // **監聽格子點擊事件**
-    $(".tile").on("click", function () {
-        let index = $(this).data("index");
-        let targetX = index % gridSize;
-        let targetY = Math.floor(index / gridSize);
-        moveCharacter(targetX, targetY);
-    });
-
-    // **初始化角色位置**
-    function setInitialPosition() {
-        let startX = (charPos.x / (gridSize - 1)) * containerSize;
-        let startY = (charPos.y / (gridSize - 1)) * containerSize;
-        character.css({ left: startX + "%", top: startY + "%" });
-    }
-
-    setInitialPosition();
-});
-
-
-</script>
+          <div class="project-year">2025</div>
+          <div class="project-item">
+            <h3 class="project-title">高學文學館網站：三式</h3>
+            <div class="project-role">前端靜態網頁開發</div>
+            <p class="project-description">
+              獨立完成高學文學館旗下三個主題網站（政治文學主題網、勞工文學主題網、地景走讀網）的前端靜態網頁製作，注重使用者介面設計
+              (UI) 與使用者體驗 (UX)
+              的一致性、資訊呈現的清晰度與易讀性，以及網站在不同裝置上的良好響應式設計。
+            </p>
+          </div>
+          <div class="project-item">
+            <h3 class="project-title">台灣文學作家網站</h3>
+            <div class="project-role">網頁設計、簡易後端資料串接</div>
+            <p class="project-description">
+              負責台灣文學作家網站的整體視覺設計與前端開發。創新地運用 Google
+              表單作為簡易後端資料庫，並設計程式邏輯以 Fetch
+              表單資料，自動生成網站所需的圖卡內容，顯著簡化內容管理流程並提高更新效率。
+            </p>
+          </div>
+          <div class="project-item">
+            <h3 class="project-title">
+              桃園蘆竹地政事務所 LIFF (LINE 前端框架) 預約系統
+            </h3>
+            <div class="project-role">前端開發、簡易後端開發</div>
+            <p class="project-description">
+              負責開發桃園蘆竹地政事務所基於 LINE 前端框架 (LIFF)
+              的預約系統。專注於開發使用者友善的預約前端頁面，確保在 LINE App
+              內的流暢操作體驗。同時開發簡易後端邏輯，處理預約資料的提交、儲存與查詢，並整合
+              LINE Notify 功能，實現預約成功後自動發送 LINE
+              訊息通知給預約者，提升服務效率。
+            </p>
+          </div>
+          <div class="project-item">
+            <h3 class="project-title">數學答題王(SPA)</h3>
+            <div class="project-role">企劃組長</div>
+            <p class="project-description">
+              擔任企劃組長，負責該中型數學學習網站的整體專案規劃和方向制定，與六人團隊進行有效的分工協作，確保專案各階段按計畫進行。主導數學題庫的作用式整理，提升題庫的結構化和檢索效率，並積極參與前端和後端功能的設計與開發，將簡單的遊戲化機制融入網站，提升高中生學習的趣味性和互動性。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

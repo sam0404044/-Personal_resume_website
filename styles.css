@@ -1,0 +1,380 @@
+/* 全域樣式 */
+* {
+  font-family: "微軟正黑體", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 區塊一：背景與對齊設定 */
+.section1 {
+  height: 30vh;
+  position: relative;
+  background-color: #1a1d1e;
+  display: flex;
+  align-items: start;
+}
+
+.section1-container {
+  display: flex;
+  align-items: center;
+  gap: 4vh;
+  margin-left: 5vh;
+}
+
+/* 頭像 */
+.headphoto-wrapper {
+  position: absolute;
+  bottom: -10vh;
+  left: 10vh;
+  height: 28vh;
+  width: 28vh;
+  border-radius: 50%;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1vh 1vh 1vh rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.headphoto {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  clip-path: circle(50%);
+  transition: all 0.3s ease;
+}
+
+.headphoto-wrapper:hover {
+  transform: scale(1.05);
+  border-color: #fffacd;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* 名字與社群按鈕 */
+.s1text {
+  position: absolute;
+  left: 45vh;
+  bottom: 1vh;
+  display: flex;
+  flex-direction: column;
+  color: aliceblue;
+  justify-content: center; /* ⭐ 加這行，讓內部文字垂直置中 */
+}
+
+.s1name {
+  font-size: clamp(30px, 6vw, 6vh);
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+
+.s1enname {
+  font-size: clamp(20px, 3vw, 3vh);
+  margin-bottom: 2vh;
+}
+.s1worktitle {
+  font-size: clamp(20px, 3vw, 3vh);
+  margin-bottom: 2vh;
+  background-color: aliceblue;
+  color: black;
+}
+
+.social_media {
+  position: absolute;
+  color: aliceblue;
+  right: 5vh;
+  bottom: 2vh;
+  display: flex;
+  gap: 2vh;
+}
+
+.social_media img {
+  width: 5vh;
+  height: 5vh;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.social_media img:hover {
+  transform: scale(1.2);
+}
+
+/* ////////////////////////////////////////section2//////////////////////////////////// */
+.section2 {
+  position: relative;
+  background-color: #fefefe; /* 比原本的 aliceblue 更淡 */
+  display: flex;
+  align-items: start;
+  /* height: 111.4vh; */
+}
+.section-title-wrap {
+  position: relative;
+  margin: 10vh 0 0 5vh;
+}
+
+/* ///////////////////////////////自我介紹///////////////////////////////// */
+.textStyle {
+  font-family: "Noto Sans TC", sans-serif; /* 使用思源黑體等更具設計感的無襯線字體 */
+  font-size: 18px;
+  line-height: 1.7;
+  color: #2c3e50; /* 較為沉穩的深藍灰色 */
+  margin-bottom: 1.5em;
+  padding: 1em 1.5em; /* 增加內邊距，讓文字周圍有空間 */
+  background-color: #f9f9f9; /* 淺灰色背景， हल्का सा कंट्रास्ट */
+  border-left: 6px solid #394c59; /* 左邊框，增加視覺焦點 */
+}
+
+/* SKILL 徽章風格 */
+.section-sub {
+  position: absolute;
+  top: -1.5rem;
+  margin-left: 3vh;
+
+  background-color: #e0e0e0;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "微軟正黑體", sans-serif;
+}
+
+/* 主標題樣式 */
+.section-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: bold;
+  border-left: 6px solid #f4901e;
+  padding-left: 1rem;
+  color: #1a1d1e;
+  font-family: "微軟正黑體", sans-serif;
+}
+
+.section2-container {
+  display: flex;
+}
+
+.section2-left {
+  margin-top: 10vh;
+  flex: 1;
+}
+.section2-right {
+  flex: 1;
+}
+
+.middleline {
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  width: 3px;
+  height: 250vh; /* ✅ 或者指定一個明確的高度 */
+  background-color: #f4901e;
+}
+
+/* ///////////////////////////////s2-my-skill///////////////////////////////// */
+.s2-my-skill {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin: 0 10vh;
+}
+
+.skill-card {
+  padding: 2vh;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover 效果：放大 + 陰影 */
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* RWD：平板以下變兩欄 */
+@media (max-width: 768px) {
+  .s2-my-skill {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* RWD：手機以下變一欄 */
+@media (max-width: 480px) {
+  .s2-my-skill {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 進度圈 */
+.progress-ring {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh auto;
+  transition: transform 0.3s ease;
+}
+
+.progress-ring:hover {
+  transform: scale(1.1);
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+}
+
+/* 動畫的核心設定 */
+@keyframes fillProgress {
+  from {
+    stroke-dashoffset: 251.2; /* 完全沒填滿 */
+  }
+  to {
+    /* 計算目標 stroke-dashoffset：總長度 * (1 - 進度百分比 / 100) */
+    stroke-dashoffset: calc(251.2 * (1 - var(--progress) / 100));
+  }
+}
+
+.progress-background,
+.progress-fill {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.progress-background {
+  stroke: #ddd;
+}
+
+.progress-fill {
+  stroke: #f4901e;
+  stroke-dasharray: 251.2;
+  stroke-dashoffset: 62.8;
+  animation: fillProgress 1s ease-out forwards;
+  transition: stroke 0.3s ease;
+}
+
+.progress-ring:hover .progress-fill {
+  stroke: #ffdd80; /* hover 時改顏色 */
+}
+
+.progress-text {
+  position: absolute;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a1d1e;
+}
+
+/* //////////////////////其他技能////////////////////////// */
+
+/* 其他技能區塊的樣式調整 */
+
+.other-skills-container {
+  margin-top: 15px; /* 其他技能列表上方的間距 */
+}
+
+.other-skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skill-item {
+  margin-bottom: 12px; /* 增加技能項目之間的間距 */
+}
+
+.skill-item::before {
+  content: ""; /* 移除菱形符號 */
+  margin-right: 0; /* 同時移除符號佔據的右邊距 */
+}
+
+.skill-title {
+  font-size: 1.15em; /* 放大技能標題 */
+  font-weight: bold;
+  display: block; /* 讓標題獨佔一行 */
+  margin-left: 0; /* 移除為了對齊符號的左邊距 */
+}
+
+.skill-description {
+  font-size: 1em; /* 放大技能描述 */
+  color: #555;
+  word-break: break-word;
+  display: block; /* 讓描述獨佔一行 */
+  margin-left: 0; /* 移除為了對齊符號的左邊距 */
+  margin-top: 5px; /* 標題和描述之間的間距 */
+}
+
+/* //////////////////////////////專案經驗/////////////////////////// */
+.project-experience {
+  margin: 20px 30px 20px 30px;
+  padding: 15px;
+  /* border: 1px solid #f0f0f0; */
+  border-radius: 5px;
+}
+
+.project-year {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+  padding-left: 10px; /* 增加左內邊距，為橘色線條留空間 */
+  position: relative; /* 讓偽元素可以相對於此元素定位 */
+}
+
+.project-year::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px; /* 設定橘色線條的寬度 */
+  background-color: orange; /* 設定橘色 */
+}
+
+.project-item {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border-left: 3px solid #ddd;
+}
+
+.project-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.project-role {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.sub-project {
+  margin-top: 12px;
+  padding-left: 15px;
+  border-left: 2px solid #eee;
+}
+
+.sub-project-title {
+  font-size: 1.05em;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 5px;
+}
