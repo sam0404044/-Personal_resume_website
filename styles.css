@@ -62,7 +62,7 @@
   display: flex;
   flex-direction: column;
   color: aliceblue;
-  justify-content: center; /* ⭐ 加這行，讓內部文字垂直置中 */
+  justify-content: center;
 }
 
 .s1name {
@@ -89,6 +89,11 @@
   bottom: 2vh;
   display: flex;
   gap: 2vh;
+}
+
+.social_media span {
+  position: relative;
+  top: 10px;
 }
 
 .social_media img {
@@ -123,7 +128,7 @@
   color: #2c3e50; /* 較為沉穩的深藍灰色 */
   margin-bottom: 1.5em;
   padding: 1em 1.5em; /* 增加內邊距，讓文字周圍有空間 */
-  background-color: #f9f9f9; /* 淺灰色背景， हल्का सा कंट्रास्ट */
+  background-color: #f9f9f9; /* 淺灰色背景*/
   border-left: 6px solid #394c59; /* 左邊框，增加視覺焦點 */
 }
 
@@ -377,4 +382,192 @@
   font-weight: bold;
   color: #666;
   margin-bottom: 5px;
+}
+
+.project-description-tag {
+  color: #555;
+  font-size: 0.5em;
+}
+
+/* ==================== RWD 覆寫，請貼在最後 ==================== */
+
+/* 手機／平板：section1 依序直向排列 */
+@media (max-width: 768px) {
+  .section1 {
+    height: auto;
+    padding: 24px 16px 20px;
+    display: block; /* 不用水平對齊，交給下面容器 */
+  }
+  .section1-container {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column; /* 直向排列 */
+    align-items: center;
+    gap: 12px;
+    position: relative; /* 保留給內部定位用 */
+  }
+
+  /* 取消絕對定位，讓元素自然流佈 */
+  .headphoto-wrapper {
+    position: static;
+    height: 140px;
+    width: 140px;
+    bottom: auto;
+    left: auto;
+    margin: 0 auto 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  .s1text {
+    position: static;
+    left: auto;
+    bottom: auto;
+    margin: 0;
+    text-align: center;
+    color: aliceblue;
+  }
+
+  .social_media {
+    position: static;
+    right: auto;
+    bottom: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-top: 8px;
+    color: aliceblue;
+  }
+  .social_media span {
+    position: static; /* 移除原本 top:10px */
+    top: auto;
+    font-size: 14px;
+    white-space: normal;
+    word-break: break-all;
+  }
+  .social_media img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* 手機／平板：section2 左右欄改單欄接續，隱藏中線 */
+@media (max-width: 768px) {
+  .section2 {
+    display: block; /* 不要水平並排 */
+    background-color: #fefefe;
+    padding-bottom: 24px;
+  }
+  .section2-container {
+    display: block; /* 保險覆寫：確保不是 flex */
+  }
+  .section2-left,
+  .section2-right {
+    flex: none;
+    width: 100%;
+    margin-top: 24px;
+    padding-inline: 16px; /* 兩邊留白 */
+  }
+  .middleline {
+    display: none; /* 隱藏中間橘色直線 */
+  }
+
+  /* 標題區塊外距調整（去掉左側固定 margin） */
+  .section-title-wrap {
+    margin: 24px 0 0 0;
+  }
+  .section-sub {
+    margin-left: 0;
+    top: -1.2rem;
+  }
+
+  /* 技能網格在 768px 兩欄、480px 以下一欄（你原本規則已含，這裡補 gap 與外距） */
+  .s2-my-skill {
+    gap: 12px;
+    margin: 0 0; /* 移除左右 10vh，避免手機擠壓 */
+  }
+}
+
+/* 更小手機：字級與頭像再緊湊點 */
+@media (max-width: 480px) {
+  .headphoto-wrapper {
+    height: 128px;
+    width: 128px;
+  }
+  .s1name {
+    font-size: clamp(22px, 7vw, 26px);
+    margin-bottom: 6px;
+  }
+  .s1enname,
+  .s1worktitle {
+    font-size: clamp(14px, 4.2vw, 16px);
+    margin-bottom: 8px;
+  }
+  .textStyle {
+    font-size: 15px;
+    padding: 0.9em 1em;
+    border-left-width: 5px;
+  }
+}
+
+/* 手機板調整 section-sub 徽章 */
+@media (max-width: 768px) {
+  .section-sub {
+    font-size: 12px; /* 縮小字體 */
+    padding: 0.2rem 0.6rem; /* 減少灰底大小 */
+    border-radius: 14px; /* 灰底圓角跟著縮 */
+    top: -1rem; /* 與標題距離更近但不重疊 */
+  }
+}
+
+@media (max-width: 480px) {
+  .section-sub {
+    font-size: 11px; /* 更小手機再縮一級 */
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    top: -0.9rem;
+  }
+}
+
+/* 手機板：專案經驗左右對齊其他項目，移除邊距與左線 */
+@media (max-width: 768px) {
+  .project-experience {
+    margin: 20px 0; /* 移除左右 30px 的縮排 */
+    padding: 0; /* 移除左右 padding，保留上下自然間距 */
+  }
+
+  .project-item {
+    padding-left: 0; /* 移除內縮 */
+    border-left: none; /* 取消左邊的灰線 */
+    margin-bottom: 16px; /* 留一點段落距離 */
+  }
+}
+
+@media (max-width: 768px) {
+  .social_media {
+    flex-wrap: wrap; /* 允許換行 */
+    justify-content: center; /* 手機版置中 */
+  }
+  .social_media span:nth-child(1),
+  .social_media span:nth-child(2) {
+    flex: 1 1 100%; /* 每個 span 各占一整行 */
+    text-align: center; /* 置中 */
+  }
+}
+
+.project-title a {
+  color: inherit; /* 跟標題顏色一致 */
+  text-decoration: none; /* 移除底線 */
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.project-title a:hover {
+  color: #f4901e; /* 滑過時變橘色 */
+  text-decoration: underline; /* 加上底線（可改為 border-bottom） */
+}
+
+.project-title a:hover {
+  color: #f4901e;
+  text-decoration: none;
+  border-bottom: 2px solid #f4901e; /* 橘色底線 */
+  padding-bottom: 2px;
 }
