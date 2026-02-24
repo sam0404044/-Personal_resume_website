@@ -13,6 +13,7 @@
   background-color: #1a1d1e;
   display: flex;
   align-items: start;
+  margin-bottom: 6vh; /* 區塊與下方內容保留垂直間距 */
 }
 
 .section1-container {
@@ -117,7 +118,7 @@
 }
 .section-title-wrap {
   position: relative;
-  margin: 10vh 0 0 5vh;
+  margin: 8vh 0 4vh 5vh; /* 上方與下方都保留適當間距 */
 }
 
 /* ///////////////////////////////自我介紹///////////////////////////////// */
@@ -209,10 +210,10 @@
   }
 }
 
-/* RWD：手機以下變一欄 */
+/* RWD：手機板維持一行兩個資訊圈圈 */
 @media (max-width: 480px) {
   .s2-my-skill {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -554,20 +555,16 @@
   }
 }
 
-.project-title a {
-  color: inherit; /* 跟標題顏色一致 */
-  text-decoration: none; /* 移除底線 */
-  transition: color 0.3s, text-decoration 0.3s;
-}
-
-.project-title a:hover {
-  color: #f4901e; /* 滑過時變橘色 */
-  text-decoration: underline; /* 加上底線（可改為 border-bottom） */
-}
-
 .project-title a:hover {
   color: #f4901e;
   text-decoration: none;
   border-bottom: 2px solid #f4901e; /* 橘色底線 */
   padding-bottom: 2px;
+}
+
+/* 專案標題中的超連結預設為藍色 */
+.project-title a {
+  color: #1e88e5;
+  text-decoration: none;
+  transition: color 0.3s, border-bottom-color 0.3s;
 }
